@@ -1,0 +1,36 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.list__item {
+  list-style: none;
+  background-color: rgb(241, 170, 15);
+  height: 35px;
+  font-size: 1.3rem;
+  min-width: 319px;
+  display: flex;
+  padding-left: 1rem;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  justify-content: space-between;
+  padding-right: 1rem;
+  align-items: center;
+  color: white;
+}
+
+.list__button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.list__heading {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
