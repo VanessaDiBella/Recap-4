@@ -1,0 +1,46 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
+  margin-top: 2rem;
+  min-width: 319px;
+}
+
+section {
+  display: flex;
+  gap: 1rem;
+}
+
+.form__headline {
+  font-size: 1.5rem;
+}
+
+.form__section {
+  gap: 0.2rem;
+  margin-top: 1rem;
+}
+
+.form__checkbox {
+  accent-color: orange;
+  width: 2rem;
+}
+
+.form__button {
+  font-size: 1.2rem;
+  background-color: rgb(243, 105, 0);
+  height: 35px;
+  width: 150px;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  border-color: lightgray;
+  color: white;
+  cursor: pointer;
+  min-width: 200px;
+  align-self: center;
+}
+
+.form__input {
+  width: 14.5rem;
+  height: 1.5rem;
+}

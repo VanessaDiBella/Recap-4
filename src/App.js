@@ -12,7 +12,6 @@ export default function App() {
   const isGoodWeather = weather.isGoodWeather;
   function handleAddActivity(newActivity) {
     setActivities([...activities, newActivity]);
-    console.log(activities);
   }
   const filterActivities = activities.filter((activity) => {
     return isGoodWeather
@@ -41,7 +40,7 @@ export default function App() {
   return (
     <main>
       <h1>
-        {weather.condition} {weather.temperature} °C
+        {weather.condition} {weather.temperature}°C
       </h1>
       <List
         activities={filterActivities}

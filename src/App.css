@@ -9,7 +9,9 @@ h2,
 p,
 ul,
 li,
-button {
+button,
+label,
+input {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -21,6 +23,10 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+h1 {
+  font-size: 3rem;
 }
 /* .App {
   text-align: center;
