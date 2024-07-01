@@ -29,6 +29,10 @@ export default function App() {
       setWeather(weather);
     }
     startFetching();
+    const intervalId = setInterval(startFetching, 5000);
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
   function handleDeleteActivity(idToRemove) {
     setActivities(activities.filter((activity) => activity.id !== idToRemove));
