@@ -30,13 +30,20 @@ export default function App() {
     }
     startFetching();
   }, []);
+  function handleDeleteActivity(idToRemove) {
+    setActivities(activities.filter((activity) => activity.id !== idToRemove));
+  }
 
   return (
     <>
       <h1>
         {weather.condition} {weather.temperature} °C
       </h1>
-      <List activities={filterActivities} isGoodWeather={isGoodWeather} />
+      <List
+        activities={filterActivities}
+        isGoodWeather={isGoodWeather}
+        onDeleteActivity={handleDeleteActivity}
+      />
       <Form onAddActivity={handleAddActivity} />
     </>
   );
