@@ -1,7 +1,7 @@
 import useLocalStorageState from "use-local-storage-state";
-import Form from "./components/Form/Form";
-import List from "./components/List/List";
-
+import Form from "./components/Form/Form.js";
+import List from "./components/List/List.js";
+import "./App.css";
 import { useEffect, useState } from "react";
 
 export default function App() {
@@ -21,18 +21,26 @@ export default function App() {
 
   useEffect(() => {
     async function startFetching() {
-      const response = await fetch(
-        "https://example-apis.vercel.app/api/weather/europe"
-      );
-      const weather = await response.json();
-      setWeather(weather);
+      try {
+        const response = await fetch(
+          "https://example-apis.vercel.app/api/weather/europe"
+        );
+        if (response.ok) {
+          const weather = await response.json();
+          setWeather(weather);
+        } else {
+          console.error("bad server response");
+        }
+      } catch (error) {
+        console.error(error);
+      }
     }
     startFetching();
     const intervalId = setInterval(startFetching, 5000);
     return () => {
       clearInterval(intervalId);
     };
-  }, []);
+  }, [setWeather]);
   function handleDeleteActivity(idToRemove) {
     setActivities(activities.filter((activity) => activity.id !== idToRemove));
   }

@@ -1,10 +1,8 @@
 import { uid } from "uid";
+import "./Form.css";
 export default function Form({ onAddActivity }) {
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    // const formData = new FormData(event.target);
-    // const data = Object.fromEntries(formData);
     const newActivity = {
       id: uid(),
       name: event.target.name.value,

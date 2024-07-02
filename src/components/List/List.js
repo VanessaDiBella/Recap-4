@@ -1,3 +1,5 @@
+import "./List.css";
+
 export default function List({ activities, isGoodWeather, onDeleteActivity }) {
   return (
     <>
@@ -7,20 +9,19 @@ export default function List({ activities, isGoodWeather, onDeleteActivity }) {
           : "Bad weather outside! Here is what you can do now:"}
       </h2>
       <ul className="list">
-        {activities.map((activity) => {
-          return (
-            <li className="list__item" key={activity.id}>
-              {activity.name}
-              <button
-                className="list__button"
-                type="button"
-                onClick={() => onDeleteActivity(activity.id)}
-              >
-                X
-              </button>
-            </li>
-          );
-        })}
+        {activities.map((activity) => (
+          <li className="list__item" key={activity.id}>
+            {activity.name}
+            <button
+              aria-label="delete list item"
+              className="list__button"
+              type="button"
+              onClick={() => onDeleteActivity(activity.id)}
+            >
+              X
+            </button>
+          </li>
+        ))}
       </ul>
     </>
   );
